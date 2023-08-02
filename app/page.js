@@ -1,5 +1,6 @@
-import MoneySplit from './MoneySplit'
 import Image from 'next/image'
+import MoneySplit from './MoneySplit'
+import profilePic from '@/public/images/profile.jpg'
 
 export default function Home () {
   return (
@@ -15,16 +16,13 @@ function Profile () {
   return (
     <div className='main-container'>
       <Image
-        src='/public/perfilJared-min.jpg'
-        height={20}
-        width={30}
+        className='profilePic'
+        src={profilePic}
+        width={400}
+        height={400}
         alt='Jared Maldonado'
-        style={{
-          borderRadius: '50%',
-          minWidth: '20%',
-          maxWidth: '30%',
-          margin: '3rem 0'
-        }}
+        placeholder='blur'
+        priority
       />
       <h1>Hey! I'm Jared Maldonado</h1>
       <p style={{

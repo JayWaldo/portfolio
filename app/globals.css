@@ -1,7 +1,10 @@
 :root{
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+      'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+      'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    --white: #E6E6FA;
+    --black: #05010e;
+
   }
 
   body {
@@ -9,14 +12,17 @@
     font-family: var(--font-mono);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--white);
   }
 
   main {
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-    background-color: #B19CD9;
+    height: 100%;
+    margin: 0 auto;
   }
   
   header {
@@ -31,23 +37,34 @@
   nav ul > li {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     margin: 0 auto;
+    width: 100%;
     align-items: center;
     min-width: 3.4rem;
-    height: 100%;
+    height: 3.6rem;
     cursor: pointer;
-    color: white;
+    color: var(--white);
     font-size: 1.2rem;
-    transition: color 0.3s; /* Ajustamos la transición del color al hacer hover */
+    transition: background-color 1s ease; /* Ajustamos la transición del color al hacer hover */
   }
   
-  
-  nav ul > li:hover {
-    color: #B19CD9;
+  /* Icono del menú */
+  .menuIcon {
+    font-size: 1.6rem;
+    transition: 0.8s ease;
   }
-  
-  nav ul li > i {
-    margin: 0 auto;
+  nav ul > li:hover{
+    color: var(--black);
+    background-color: var(--white);
+    transition: color 0.8s ease;
+
+    .menuIcon{
+      cursor: pointer;
+      transition: 0.6s;
+      transform: rotate(90deg);
+      color: var(--black);
+    }
   }
   
   /* Estilos para la barra de menú */
@@ -55,7 +72,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #05010e;
+    background-color: var(--black);
     min-width: 3.4rem;
     height: 100%;
     transition: min-width 0.5s ease;
@@ -66,7 +83,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #05010e;
+    background-color: var(--black);
     min-width: 12rem;
     height: 100%;
     transition: min-width 0.5s ease;
@@ -74,14 +91,14 @@
   
   /* Lista del menú */
   .navContainer nav ul {
-    margin: 1.6rem auto;
-    position: fixed;
+    margin: 0 0 1.6rem 0;
+    position: relative;
+    width: 100%;
     display: flex;
-    row-gap: 1.6rem;
     flex-direction: column;
     align-items: flex-start;
     list-style: none;
-    color: #e2cfea;
+    color: var(--white);
     box-sizing: border-box;
     padding: 0;
     transition: 0.8s ease;
@@ -101,25 +118,6 @@
     transition: opacity 0.3s ease;
   }
   
-  /* Icono del menú */
-  .menuIcon {
-    cursor: pointer;
-    transition: 0.7s;
-    color: white;
-    font-size: 1.6rem;
-  }
-  
-  .navContainer nav ul li:not(:first-child) i {
-    margin:0 auto;
-  }
-  
-  .menuIcon:hover {
-    cursor: pointer;
-    transition: 0.6s;
-    transform: rotate(90deg);
-    color: #b092f1;
-  }
-  
   /* Estilos para la sección de perfil */
   .profileContainer {
     display: flex;
@@ -132,6 +130,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .profilePic {
+    min-width: 20%;
+    max-width: 30%;
+    height: 10%;
+    border-radius: 50%;
+    margin: 3rem 0;
   }
   
   .main-container p {

@@ -21,7 +21,7 @@ export default function SideMenu () {
   const handleClick = () => {
     setMenuIcon(menuIcon === 'fa-bars' ? 'fa-times' : 'fa-bars')
     setNavWidth(navWidth === 'navBar' ? 'navBarOpen' : 'navBar')
-    setMenuOpt(navWidth === 'navBar' ? ['Projects', 'Contact'] : [])
+    setMenuOpt(navWidth === 'navBar' ? ['Projects', 'Credentials', 'About', 'Skills', 'Contact'] : [])
     setShowMenuText(false)
   }
 
@@ -29,19 +29,37 @@ export default function SideMenu () {
     <header className='navContainer'>
       <nav className={`${navWidth}`}>
         <ul>
-          <li>
-            <i className={`fas ${menuIcon} menuIcon`} onClick={handleClick} />
+          <li onClick={handleClick} className='liMenuIcon'>
+            <i aria-hidden className={`fas ${menuIcon} menuIcon`} />
           </li>
           <li>
-            <i className='fas fa-folder' />
+            <i aria-hidden className='fas fa-folder' />
             <span className={`menuText ${showMenuText ? 'show' : ''}`}>
               {menuOpt[0]}
             </span>
           </li>
           <li>
-            <i className='fas fa-paper-plane' />
+            <i aria-hidden className='fas fa-address-card' />
             <span className={`menuText ${showMenuText ? 'show' : ''}`}>
               {menuOpt[1]}
+            </span>
+          </li>
+          <li>
+            <i aria-hidden className='fas fa-user-alt' />
+            <span className={`menuText ${showMenuText ? 'show' : ''}`}>
+              {menuOpt[2]}
+            </span>
+          </li>
+          <li>
+            <i aria-hidden className='fas fa-brain' />
+            <span className={`menuText ${showMenuText ? 'show' : ''}`}>
+              {menuOpt[3]}
+            </span>
+          </li>
+          <li>
+            <i aria-hidden className='fas fa-paper-plane' />
+            <span className={`menuText ${showMenuText ? 'show' : ''}`}>
+              {menuOpt[4]}
             </span>
           </li>
         </ul>
