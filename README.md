@@ -6,15 +6,15 @@ I will deploy it in a server later but, may be, this will going on github pages 
 
 ## Sections
 At first, there'll be a few basic section, like:
-  -Home
+  - Home
     Where a simple introduction is going to be displayed
-  -About
+  - About
     Here's where the main info will appear
-  -Projects
+  - Projects
     I'm thinking on display mini apps here so the user can play with them
-  -Skills
+  - Skills
     Here I will show the technologies I work with, and softskills
-  -Certifications
+  - Certifications
     I'm thinking on show all the certifications, scholar path and so on
-  -Contact
+  - Contact
     Here is where I'll display the info to contact me or a friendly form to reache them out
