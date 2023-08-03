@@ -1,13 +1,10 @@
 import Image from 'next/image'
-import MoneySplit from './MoneySplit'
 import profilePic from '@/public/images/profile.jpg'
 
 export default function Home () {
   return (
     <section className='profileContainer'>
       <Profile />
-      <MoneySplit />
-
     </section>
   )
 }
@@ -32,6 +29,19 @@ function Profile () {
       >
         I'm musician, psychologist and developer, tech and music lover. Take a look at my portfolio! There're many little projects to play with
       </p>
+      <StackSection />
     </div>
+  )
+}
+
+function StackSection () {
+  return (
+    <section className='stackSection'>
+      <div>Css</div>
+      <div>JS</div>
+      <div>React</div>
+      <div>NextJs</div>
+      <div>Git</div>
+    </section>
   )
 }

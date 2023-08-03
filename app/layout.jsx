@@ -1,6 +1,5 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Home from './page'
 import SideMenu from './SideMenu'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -10,7 +9,7 @@ export const metadata = {
   description: 'Personal website'
 }
 
-export default function RootLayout () {
+export default function RootLayout ({ children }) {
   return (
     <html lang='en'>
       <head>
@@ -19,7 +18,7 @@ export default function RootLayout () {
       <body className={inter.className}>
         <SideMenu />
         <main>
-          <Home />
+          {children}
         </main>
       </body>
     </html>
